@@ -35,6 +35,7 @@ def CheckMAC(MACadr):
     # 2 - ожидается ":"
     octetSeparatorCounter = 0
     # Счетчик кол-ва разделителей
+    MACadr = str(MACadr)
     for Symbole in MACadr:
         if state == 0:
             Correct, state = zeroState(Symbole)

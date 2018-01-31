@@ -5,8 +5,8 @@ from MACCorrect import MACCorrectReg as MCReg
 
 if __name__ == "__main__":
     if(len(sys.argv) == 1):
-        Mac = "1F:FF:FF:FF:FF:FA"
+        Mac = "FF:FF:FF:FF:FF:FF"
     else:
         Mac = sys.argv[1]
-    print(Mac + " is " + str(MC.CheckMAC(Mac)))
-    print(Mac + " is (Reg) " + str(MCReg.CheckMacReg((Mac))))
+    print(str(Mac) + " is " + str(MC.CheckMAC(Mac)))
+    print(str(Mac) + " is (Reg) " + str(MCReg.CheckMacReg((Mac))))
