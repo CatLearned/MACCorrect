@@ -1,9 +1,12 @@
 # Place for main Function
 import sys
-from MACCorrect import MACParser
+from MACCorrect import MACCorrectAuto as MC
+from MACCorrect import MACCorrectReg as MCReg
 
 if __name__ == "__main__":
     if(len(sys.argv) == 1):
-        print("FF:FF:FF:FF:FF:FF" + " is " + str(MACParser.CheckMAC("FF:FF:FF:FF:FF:FF")))
+        Mac = "1F:FF:FF:FF:FF:FA"
     else:
-        print(sys.argv[1] + " is " + str(MACParser.CheckMAC(sys.argv[1])))
+        Mac = sys.argv[1]
+    print(Mac + " is " + str(MC.CheckMAC(Mac)))
+    print(Mac + " is (Reg) " + str(MCReg.CheckMacReg((Mac))))

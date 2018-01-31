@@ -21,10 +21,9 @@ def FirstState(Symbol):
 
 
 def SecondState(Symbol, counter):
-    if counter < correctOctetSeparatorCount and Symbol == separatorSymbol:
-        counter += 1
+    counter += 1
+    if counter <= correctOctetSeparatorCount and Symbol == separatorSymbol:
         return (True, 0, counter)
-
     return (False, -1, -1)
 
 
@@ -51,7 +50,7 @@ def CheckMAC(MACadr):
                 return False
         else:
             return False
-    if octetSeparatorCounter == correctOctetSeparatorCount:
+    if octetSeparatorCounter == correctOctetSeparatorCount and state == 2:
         return True
     else:
         return False
